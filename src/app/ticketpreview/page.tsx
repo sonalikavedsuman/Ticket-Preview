@@ -1,12 +1,12 @@
+
+import TPreview from "@/components/TicketPreview/TPreview";
 import React from "react";
-import TicketPreview from "@/components/TicketPreview";
 
 
-const Ticket= () => {
+
+const Ticket = () => {
   return (
-    <main >
-      <TicketPreview />
-    </main>
+    <TPreview/>
   );
 };
 

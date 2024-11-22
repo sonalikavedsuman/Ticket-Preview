@@ -86,3 +86,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+h1 {
+  all: unset; /* Removes all inherited and default styles */
+  font-size: 2rem; /* Restore default heading size or set a custom one */
+   /* Ensure bold heading */
+}

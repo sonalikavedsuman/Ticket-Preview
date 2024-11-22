@@ -18,14 +18,16 @@ import {
   PlusIcon,
 } from "lucide-react"; // Import icons
 import ticketData from "@/constants/ticketData";
-import { Checkbox } from "./ui/checkbox";
+import { Checkbox } from "@radix-ui/react-checkbox";
 
-const TicketPreview = () => {
-  const ticket = ticketData[0]; // Assuming you want the first ticket
+  
+
+const TicketPreviewMain= () => {
+  const ticket = ticketData[0]; 
 
   return (
     <div className="bg-white pt-5 pl-5">
-      <div className="flex flex-row">
+      <div className="flex flex-row  ">
         <div className="flex flex-row">
           <Button
             variant="outline"
@@ -39,14 +41,14 @@ const TicketPreview = () => {
         <div className="flex flex-row">
           <Button
             variant="outline"
-            className="border-black text-black ml-64 font-medium"
+            className="border-black text-black ml-36 font-medium"
           >
             {ticket.buttonLabels.viewDetails}
           </Button>
           <Cross1Icon className="mt-2 ml-4" />
         </div>
       </div>
-      <div className="border-2 mt-5 rounded-md w-1/3">
+      <div className="border-2 mt-10 rounded-md w-fit">
         <div className="flex flex-row pt-3 pb-3 border-b-2">
           <div className="flex flex-row justify-around place-content-between">
             <p className="font-bold text-xl pl-8">{ticket.id}</p>
@@ -148,7 +150,7 @@ const TicketPreview = () => {
         </h1>
         {ticket.activity.map((act, index) => (
           <div className="flex flex-row" key={index}>
-            <div>
+            <div className={``} >
               {act.icon === "Ticket" && (
                 <Ticket
                   className={`h-8 w-8 ${act.color}  bg-slate-300 rounded-full`}
@@ -190,8 +192,8 @@ const TicketPreview = () => {
         </div>
       </div>
       <div className="mt-8 border-t-2 w-1/3">
-        <div className="flex flex-row justify-between mt-5">
-          <p className="font-semibold text-gray-500">
+        <div className="flex flex-row justify-between mt-10">
+          <p className="font-semibold text-gray-500 ">
             {ticket.upcomingTasks.length} Upcoming Task
           </p>
           <div className="flex flex-row font-semibold">
@@ -200,11 +202,11 @@ const TicketPreview = () => {
           </div>
         </div>
         {ticket.upcomingTasks.map((task, index) => (
-          <div className="flex items-center mt-5 border-t-2" key={index}>
-            <Checkbox id={`task-${index}`} />
+          <div className="flex items-center mt-5 " key={index}>
+            <Checkbox  className='border-2 border-gray-400 w-7 h-4 mb-4' id={`task-${index}`}/>
             <label
               htmlFor={`task-${index}`}
-              className="flex flex-col leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ml-4"
+              className="flex flex-col leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ml-8"
             >
               <p className="text-md font-medium mt-8">{task.description}</p>
               <p className="text-sm font-semibold text-gray-500 mt-3">
@@ -227,4 +229,4 @@ const TicketPreview = () => {
   );
 };
 
-export default TicketPreview;
+export default TicketPreviewMain;

@@ -1,12 +1,13 @@
+
+import Dashboard from "@/components/Dashboard/DashBoard";
+import HomePage from "@/components/HomePage/HomePage";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div>
-      <h1>HOME PAGE</h1>
-      <Link href="/ticketpreview">
-        <h1>Ticket Preview</h1>
-      </Link>
+    <div className="flex flex-col">
+     <HomePage/>
+      
     </div>
   );
 }

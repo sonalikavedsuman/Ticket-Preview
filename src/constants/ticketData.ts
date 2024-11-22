@@ -1,6 +1,6 @@
 const ticketData = [
   {
-    id: "TC-196",
+    id: "#TC-196",
     title: "Defective Item Received",
     ticketType: {
       label: "Incident",
