@@ -17,16 +17,16 @@ const DashboardSidebar: React.FC<DashboardProps> = ({ setActivePage }) => {
         height="50"
         className="ml-5"
       />
-      
+
       <div className="ml-5">
-      <Button
-        variant="ghost"
-        className="w-60 flex flex-row justify-start rounded-full mb-4"
-        onClick={() => setActivePage("Home")}
-      >
-        <Home className="text-pink-700 fill-pink-700" />
-        <p className="text-black font-bold">Home</p>
-      </Button>
+        <Button
+          variant="ghost"
+          className="w-60 flex flex-row justify-start rounded-full mb-4"
+          onClick={() => setActivePage("Home")}
+        >
+          <Home className="text-pink-700 fill-pink-700" />
+          <p className="text-black font-bold">Home</p>
+        </Button>
         <Button
           variant="ghost"
           className="w-60 flex flex-row justify-start rounded-full mb-4"
@@ -35,7 +35,6 @@ const DashboardSidebar: React.FC<DashboardProps> = ({ setActivePage }) => {
           <LayoutPanelLeft className="text-pink-700 fill-pink-700 mr-2" />
           <p className="text-black font-bold">Dashboard</p>
         </Button>
-
         <Button
           variant="ghost"
           className="w-60 flex flex-row justify-start rounded-full mb-4"
@@ -44,7 +43,6 @@ const DashboardSidebar: React.FC<DashboardProps> = ({ setActivePage }) => {
           <Layers className="text-gray-500 fill-gray-500 mr-2" />
           <p className="text-gray-400 font-bold">All Clients</p>
         </Button>
-
         <Button
           variant="ghost"
           className="w-60 flex flex-row justify-start rounded-full mb-4"
@@ -55,7 +53,6 @@ const DashboardSidebar: React.FC<DashboardProps> = ({ setActivePage }) => {
           </div>
           <p className="text-gray-400 font-bold">TechInnovate Solutions</p>
         </Button>
-
         <Button
           variant="ghost"
           className="w-60 flex flex-row justify-start rounded-full"

@@ -10,15 +10,17 @@ interface TicketProps {
 
 const TicketPreviewSidebar: React.FC<TicketProps> = ({ setActivePage }) => {
   return (
-    <div className="ml-5">
+    
+      <div className="bg-gray-200">
       <Image
         src="/Images/logo1.jpg"
         alt="logo"
         width="80"
         height="50"
-        className="mb-6"
+        className="ml-6"
       />
-      <div>
+      
+      <div className="ml-5">
         <Button
           variant="ghost"
           className="w-60 flex flex-row justify-start rounded-full mb-4"
@@ -37,6 +39,8 @@ const TicketPreviewSidebar: React.FC<TicketProps> = ({ setActivePage }) => {
         </Button>
       </div>
     </div>
+    
+   
   );
 };
 
