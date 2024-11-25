@@ -4,7 +4,7 @@ import { Home, Layers, LayoutPanelLeft } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface DashboardProps {
-  setActivePage: (page: string) => void; // Explicitly typing the prop
+  setActivePage: (page: string) => void; 
 }
 
 const DashboardSidebar: React.FC<DashboardProps> = ({ setActivePage }) => {

@@ -2,15 +2,38 @@ const ticketData = [
   {
     id: "#TC-196",
     title: "Defective Item Received",
-    ticketType: {
+    header: {
+      title: "Ticket Preview",
+    },
+    buttonLabels: {
+      viewDetails: "View Full Details",
+      open: "Open",
+      addNewTask: "Add New Task",
+    },
+    incident: {
+      heading: 'Ticket Type',
       label: "Incident",
-      icon: "FlameIcon",
+      icon1: "FlameIcon",
+      icon2: "ChevronDown",
     },
+    incidents: [
+      { label: "Incident1" },
+      { label: "Incident2" },
+      { label: "Incident3" },
+    ],
     priority: {
+      heading: 'priority',
       label: "High",
-      icon: "DotFilledIcon",
+      icon1: "DotFilledIcon",
+      icon2: "ChevronUp",
     },
+    priorities: [
+      { label: "Low", icon: "DotFilledIcon", color: "text-green-600", backgroundColor: "bg-green-100" },
+      { label: "Medium", icon: "DotFilledIcon", color: "text-yellow-600", backgroundColor: "bg-yellow-100" },
+      { label: "High", icon: "DotFilledIcon", color: "text-red-600", backgroundColor: "bg-red-100" },
+    ],
     assignedTo: {
+      heading: 'Assigned to',
       initials: "FIK",
       name: "Bagus Fikri",
     },
@@ -54,25 +77,9 @@ const ticketData = [
       message: "Ticket 192 has been updated",
       icon: "TicketCheckIcon",
     },
-    incidents: [
-      { label: "Incident1" },
-      { label: "Incident2" },
-      { label: "Incident3" },
-    ],
-    priorities: [
-      { label: "Low", icon: "DotFilledIcon", color: "text-green-600", backgroundColor: "bg-green-100" },
-      { label: "Medium", icon: "DotFilledIcon", color: "text-yellow-600", backgroundColor: "bg-yellow-100" },
-      { label: "High", icon: "DotFilledIcon", color: "text-red-600", backgroundColor: "bg-red-100" },
-    ],
-    buttonLabels: {
-      viewDetails: "View Full Details",
-      open: "Open",
-      addNewTask: "Add New Task",
-    },
-    header: {
-      title: "Ticket Preview",
-      icon: "Ticket",
-    },
+   
+    
+    
   },
 ];
 

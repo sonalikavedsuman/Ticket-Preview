@@ -18,7 +18,8 @@ import {
   PlusIcon,
 } from "lucide-react"; // Import icons
 import ticketData from "@/constants/ticketData";
-import { Checkbox } from "@radix-ui/react-checkbox";
+import { Checkbox } from "../ui/checkbox";
+
 
   
 
@@ -72,12 +73,12 @@ const TicketPreviewMain= () => {
                     className="bg-slate-100 text-black rounded-[15px] h-7"
                   >
                     <span>
-                      {ticket.ticketType.icon === "FlameIcon" && (
+                      {ticket.incident.icon1 === "FlameIcon" && (
                         <FlameIcon className="font-semibold" />
                       )}
                     </span>
                     <span className="capitalize font-semibold">
-                      {ticket.ticketType.label}
+                      {ticket.incident.label}
                     </span>
                     <span>
                       <ChevronDown className="font-semibold" />
@@ -86,9 +87,8 @@ const TicketPreviewMain= () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuSeparator />
-                  {ticket.incidents.map((incident, index) => (
+                  {ticket.incidents.map((i, index) => (
                     <DropdownMenuCheckboxItem key={index}>
-                      {incident.label}
                     </DropdownMenuCheckboxItem>
                   ))}
                 </DropdownMenuContent>
@@ -105,7 +105,7 @@ const TicketPreviewMain= () => {
                     className="bg-rose-200 text-black rounded-[15px] h-7"
                   >
                     <span>
-                      {ticket.priority.icon === "DotFilledIcon" && (
+                      {ticket.priority.icon1 === "DotFilledIcon" && (
                         <DotFilledIcon className="text-red-600 font-semibold" />
                       )}
                     </span>
@@ -150,22 +150,25 @@ const TicketPreviewMain= () => {
         </h1>
         {ticket.activity.map((act, index) => (
           <div className="flex flex-row" key={index}>
+            <div>
             <div className={``} >
               {act.icon === "Ticket" && (
                 <Ticket
-                  className={`h-8 w-8 ${act.color}  bg-slate-300 rounded-full`}
+                  className={`h-8 w-8 ${act.color}  bg-slate-300 rounded-full p-2`}
                 />
               )}
 
+            </div>
+            
               {act.icon === "FlameIcon" && (
                 <FlameIcon
-                  className={`h-8 w-8 ${act.color} bg-red-500 rounded-full`}
+                  className={`h-8 w-8 ${act.color} bg-red-500 rounded-full p-2`}
                 />
               )}
 
               {act.icon === "PhoneIcon" && (
                 <PhoneIcon
-                  className={`h-8 w-8  ${act.color}  bg-blue-500 rounded-full`}
+                  className={`h-8 w-8  ${act.color}  bg-blue-500 rounded-full p-2`}
                 />
               )}
             </div>
@@ -184,6 +187,7 @@ const TicketPreviewMain= () => {
             </div>
           </div>
         ))}
+        
         <div className="flex flex-row">
           <div className="rounded-full bg-black text-white h-8 w-8 pl-1 pt-1">
             <ChevronsUpDownIcon className="h-5 w-5 pt-1 pl-1" />
@@ -203,7 +207,7 @@ const TicketPreviewMain= () => {
         </div>
         {ticket.upcomingTasks.map((task, index) => (
           <div className="flex items-center mt-5 " key={index}>
-            <Checkbox  className='border-2 border-gray-400 w-7 h-4 mb-4' id={`task-${index}`}/>
+            <Checkbox  className='border-2 border-gray-400 ' id={`task-${index}`}/>
             <label
               htmlFor={`task-${index}`}
               className="flex flex-col leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ml-8"

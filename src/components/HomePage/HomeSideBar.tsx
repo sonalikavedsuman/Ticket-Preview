@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Image from "next/image";
-import { Layers, LayoutPanelLeft, FileText, Ticket, Home } from "lucide-react";
+import { LayoutPanelLeft,  Ticket, Home } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface HomeProps {
@@ -43,6 +43,15 @@ const HomePage: React.FC<HomeProps> = ({ setActivePage }) => {
       >
         <Ticket className="text-blue-500 fill-blue-500" />
         <p className="text-blue-400 font-bold">Ticket Preview</p>
+      </Button>
+
+      <Button
+        variant="ghost"
+        className="w-60 flex flex-row justify-start rounded-full mb-4"
+        onClick={() => setActivePage("Ticket1")}
+      >
+        <Ticket className="text-blue-500 fill-blue-500" />
+        <p className="text-blue-400 font-bold">Ticket Preview1</p>
       </Button>
     </div>
   );
