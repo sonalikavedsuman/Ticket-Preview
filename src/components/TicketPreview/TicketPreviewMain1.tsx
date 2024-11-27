@@ -2,16 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Cross1Icon, DotFilledIcon } from "@radix-ui/react-icons";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -22,12 +15,9 @@ import {
   ChevronDown,
   ChevronUp,
   ChevronsUpDownIcon,
-  PlusIcon,
-  TicketIcon,
+  PlusIcon
 } from "lucide-react"; // Import icons
 import ticketData from "@/constants/ticketData";
-
-import { DropdownMenuSubTrigger } from "@radix-ui/react-dropdown-menu";
 import { Checkbox } from "../ui/checkbox";
 
 const TicketPreviewMain1 = () => {
@@ -40,7 +30,6 @@ const TicketPreviewMain1 = () => {
             variant={"secondary"}
             className="text-green-400 font-extrabold text-xl h-6 w-6"
           >
-            {" "}
             &#928;
           </Button>
           <p className="font-bold">{Ticket1.header.title}</p>
@@ -73,14 +62,14 @@ const TicketPreviewMain1 = () => {
           </div>
           <div className="flex flex-row justify-evenly mt-5">
             <div className=" flex flex-col items-center justify-center border-r-2 pr-52">
-              <p>{Ticket1.incident.heading}</p>
+              <p className=" font-semibold mb-1">{Ticket1.incident.heading}</p>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="secondary" className="rounded-full">
                     {Ticket1.incident.icon1 === "FlameIcon" && (
                       <FlameIcon className="font-semibold " />
                     )}
-                    <p>{Ticket1.incident.label}</p>
+                    <p className="font-semibold">{Ticket1.incident.label}</p>
                     {Ticket1.incident.icon2 === "ChevronDown" && (
                       <ChevronDown className="font-semibold" />
                     )}
@@ -95,16 +84,16 @@ const TicketPreviewMain1 = () => {
               </DropdownMenu>
             </div>
             <div className="flex flex-col items-center justify-center border-r-2 pr-52">
-              <p>{Ticket1.priority.heading}</p>
+              <p className="font-semibold">{Ticket1.priority.heading}</p>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="secondary" className="rounded-full ">
+                  <Button variant="secondary" className="rounded-full bg-rose-100">
                     {Ticket1.priority.icon1 === "DotFilledIcon" && (
-                      <DotFilledIcon className="font-semibold" />
+                      <DotFilledIcon className="font-semibold text-rose-500" />
                     )}
-                    <p>{Ticket1.priority.label}</p>
+                    <p className="font-semibold text-rose-500">{Ticket1.priority.label}</p>
                     {Ticket1.priority.icon2 === "ChevronUp" && (
-                      <ChevronUp className="font-semibold" />
+                      <ChevronUp className="font-semibold text-rose-500" />
                     )}
                   </Button>
                 </DropdownMenuTrigger>
@@ -117,12 +106,12 @@ const TicketPreviewMain1 = () => {
               </DropdownMenu>
             </div>
             <div >
-              <p>{Ticket1.assignedTo.heading}</p>
-              <div className="flex flex-row">
-                <p className="text-purple-500 w-8 h-8 rounded-full bg-black">
+              <p className="font-semibold ml-3">{Ticket1.assignedTo.heading}</p>
+              <div className="flex flex-row ">
+                <p className="text-purple-500 w-8 h-8 rounded-full bg-black pt-1 pl-1 ">
                   {Ticket1.assignedTo.initials}
                 </p>
-                <p>{Ticket1.assignedTo.name}</p>
+                <p className="ml-2 mt-1">{Ticket1.assignedTo.name}</p>
               </div>
             </div>
           </div>
@@ -173,7 +162,7 @@ const TicketPreviewMain1 = () => {
         </div>
         <div id="section3" className="border-t-2 mr-10">
           <div className="flex flex-row justify-between mt-8">
-            <p className="font-semibold text-medium">2 Upcoming Task</p>
+            <p className="font-semibold text-medium"> {Ticket1.upcomingTasks.length} Upcoming Task</p>
             <Button variant={"secondary"}>
               <PlusIcon />
               <p className="font-semibold">Add New task</p>

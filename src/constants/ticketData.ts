@@ -22,7 +22,7 @@ const ticketData = [
       { label: "Incident3" },
     ],
     priority: {
-      heading: 'priority',
+      heading: 'Priority',
       label: "High",
       icon1: "DotFilledIcon",
       icon2: "ChevronUp",

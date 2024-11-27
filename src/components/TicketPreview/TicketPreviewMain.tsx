@@ -88,7 +88,7 @@ const TicketPreviewMain= () => {
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuSeparator />
                   {ticket.incidents.map((i, index) => (
-                    <DropdownMenuCheckboxItem key={index}>
+                    <DropdownMenuCheckboxItem key={index}>{i.label}
                     </DropdownMenuCheckboxItem>
                   ))}
                 </DropdownMenuContent>
@@ -151,15 +151,13 @@ const TicketPreviewMain= () => {
         {ticket.activity.map((act, index) => (
           <div className="flex flex-row" key={index}>
             <div>
-            <div className={``} >
               {act.icon === "Ticket" && (
                 <Ticket
                   className={`h-8 w-8 ${act.color}  bg-slate-300 rounded-full p-2`}
                 />
               )}
 
-            </div>
-            
+           
               {act.icon === "FlameIcon" && (
                 <FlameIcon
                   className={`h-8 w-8 ${act.color} bg-red-500 rounded-full p-2`}
@@ -195,8 +193,8 @@ const TicketPreviewMain= () => {
           <p className="font-bold ml-3 my-1">View More Activity</p>
         </div>
       </div>
-      <div className="mt-8 border-t-2 w-1/3">
-        <div className="flex flex-row justify-between mt-10">
+      <div className="mt-5 border-t-2 w-1/3">
+        <div className="flex flex-row justify-between mt-5">
           <p className="font-semibold text-gray-500 ">
             {ticket.upcomingTasks.length} Upcoming Task
           </p>
@@ -206,21 +204,21 @@ const TicketPreviewMain= () => {
           </div>
         </div>
         {ticket.upcomingTasks.map((task, index) => (
-          <div className="flex items-center mt-5 " key={index}>
-            <Checkbox  className='border-2 border-gray-400 ' id={`task-${index}`}/>
+          <div className="flex items-center mt-8 " key={index}>
+            <Checkbox  className='border-2 border-gray-400 mb-9' id={`task-${index}`}/>
             <label
               htmlFor={`task-${index}`}
               className="flex flex-col leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ml-8"
             >
-              <p className="text-md font-medium mt-8">{task.description}</p>
-              <p className="text-sm font-semibold text-gray-500 mt-3">
+              <p className="text-md font-medium ">{task.description}</p>
+              <p className="text-sm font-semibold text-gray-500 mt-1">
                 Due date {task.dueDate}
               </p>
             </label>
           </div>
         ))}
       </div>
-      <div className="bg-green-600 text-white h-10 w-1/3 pt-3 mt-20">
+      <div className="bg-green-600 text-white h-10 w-1/3 pt-3 mt-16">
         <div className="flex flex-row justify-around">
           {ticket.notification.icon === "TicketCheckIcon" && (
             <TicketCheckIcon />

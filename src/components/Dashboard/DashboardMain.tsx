@@ -16,7 +16,7 @@ import { Button } from "../ui/button";
 const DashboardMain = () => {
   return (
     <div className="mt-10 ">
-      <div className="my-10">
+      <div className="my-10" >
         <h1 className="font-bold">Dashboard</h1>
         <p className="text-gray-500 font-semibold">
           Some explanation here on overview
@@ -96,7 +96,6 @@ const DashboardMain = () => {
           </div>
         </div>
       </div>
-
       <div>
         <div>
           <h2 className="text-xl font-bold mb-4 mt-4">Favorite Clients</h2>

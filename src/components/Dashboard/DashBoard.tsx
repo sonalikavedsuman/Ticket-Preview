@@ -19,6 +19,9 @@ const Dashboard = () => {
           </div>
         )}
         {activePage === "Home" && <div>Home</div>}
+        {activePage === "AllClients" && <div>All Clients</div>}
+        {activePage === "InnovativeSolutions" && <div>TechInnovateSolutions</div>}
+        {activePage === "EcoFusion" && <div>EcoFusion Innovations</div>}
       </div>
     </div>
   );
